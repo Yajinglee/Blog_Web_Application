@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+
+<form action="/submit" method="POST">
+    <div class="mb-3">
+        <label class="form-label">Title:</label>
+        <input class="form-control" type="text" aria-label="title" name="title">
+
+        <label class="form-label">Enter your post below:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="blog"></textarea>
+    </div>
+    <button class="btn btn-outline-secondary" type="submit">Submit</button>
+</form>
+
+<% if (locals.titles) { %>
+    <% titles.forEach((title) => { %>
+        <h2><%= title %></h2>
+   <% }) %>
+<% } %>
+
+<%= locals.blogs %>
+
+<%- include("partials/footer.ejs") %>

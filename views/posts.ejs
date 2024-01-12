@@ -1,0 +1,9 @@
+<%- include("partials/header.ejs") %>
+
+<%if (locals.titles) {%>
+    <% titles.forEach((title) => { %>
+        <h2 class="display-5 link-body-emphasis mb-1"><%= title %></h2>
+    <% }) %>
+<%}%> 
+
+<%- include("partials/footer.ejs") %>
