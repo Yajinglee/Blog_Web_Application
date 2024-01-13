@@ -12,12 +12,18 @@
     <button class="btn btn-outline-secondary" type="submit">Submit</button>
 </form>
 
-<% if (locals.titles) { %>
-    <% titles.forEach((title) => { %>
-        <h2><%= title %></h2>
-   <% }) %>
-<% } %>
 
-<%= locals.blogs %>
+<% if (locals.titles) { %>
+    <% titles.forEach((title, index) => { %>
+        <% if (title) { %>
+            <div class="bg-body-tertiary py-5 pr-5 rounded mt-3">
+                <h1 class="text-body-emphasis" id="title-<%= index %>"><%= title %></h1>
+                <p class="lead" id="blog-<%= index %>"><%= blogs[index] %></p>
+                <a class="btn btn-lg btn-primary" href="/edit-post" role="button" onclick="matchPost('<%= index %>')">Edit Post</a>
+            </div>
+        <% } %>
+    <% }) %>
+<% } %> 
+
 
 <%- include("partials/footer.ejs") %>

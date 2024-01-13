@@ -11,14 +11,33 @@ const titles = []
 const blogs = []
 
 app.get("/", (req, res) => {
-    res.render("index.ejs")
+    titles.push(req.body.title)
+    blogs.push(req.body.blog)
+    res.render("index.ejs", {titles, blogs})
 });
 
 app.post("/submit", (req, res) => {
-    res.render("index.ejs", {titles, blogs})
+
     titles.push(req.body.title)
     blogs.push(req.body.blog)
-    console.log(titles)
+
+    console.log(req.body)
+
+    res.render("index.ejs", {titles, blogs})
+
+
+})
+
+app.get("/edit-post", (req, res) => {
+    function matchPost(index) {
+        // const matchTitle = document.getElementById(`title-${index}`).value;
+        const matchBlog = document.getElementById(`blog-${index}`).value;
+        document.getElementById('edit-blog').value = matchBlog;
+        document.getElementById('form').submit();
+      }
+    // const selectedItem = req.body['selected-item'];  
+
+    res.render("posts.ejs")
 })
 
 // implement the post creation feature. This includes creating the form on the home page and handling the form submission in the server.
