@@ -19,7 +19,7 @@
             <div class="bg-body-tertiary py-5 pr-5 rounded mt-3">
                 <h1 class="text-body-emphasis" id="title-<%= index %>"><%= title %></h1>
                 <p class="lead" id="blog-<%= index %>"><%= blogs[index] %></p>
-                <a class="btn btn-lg btn-primary" href="/edit-post" role="button" onclick="matchPost('<%= index %>')">Edit Post</a>
+                <a class="btn btn-lg btn-primary" href="/edit-post" role="button" id = "<%= index %> onclick="matchPost('<%= index %>')">Edit Post</a>
             </div>
         <% } %>
     <% }) %>

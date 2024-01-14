@@ -29,14 +29,17 @@ app.post("/submit", (req, res) => {
 })
 
 app.get("/edit-post", (req, res) => {
-    function matchPost(index) {
-        // const matchTitle = document.getElementById(`title-${index}`).value;
-        const matchBlog = document.getElementById(`blog-${index}`).value;
-        document.getElementById('edit-blog').value = matchBlog;
-        document.getElementById('form').submit();
-      }
+    // function matchPost(index) {
+    //     const index = $("btn").attr("id")
+    //     // const matchTitle = document.getElementById(`title-${index}`).value;
+    //     const matchBlog = document.getElementById(`blog-${index}`).value;
+    //     document.getElementById('edit-blog').value = matchBlog;
+    //     document.getElementById('form').submit();
+    //   }
     // const selectedItem = req.body['selected-item'];  
 
+    const index = $("btn").attr("id")
+    console.log(index)
     res.render("posts.ejs")
 })
 
